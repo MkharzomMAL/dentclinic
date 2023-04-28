@@ -18,5 +18,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::group(['prefix' => '{locale?}', 'middleware'=>'locale'], function (){
+    Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
-Route::get('/', [HomeController::class, 'index'])->name('homepage');
+});
