@@ -24,6 +24,13 @@ h6,
     font-weight: 500 !important;
 }
 
+.topbar a {
+    color:#ffffff;
+}
+.footer a {
+    color:#ffffff;
+    display: block;
+}
 .btn {
     font-family: 'Jost', sans-serif;
     font-weight: 600;

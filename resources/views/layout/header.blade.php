@@ -52,16 +52,19 @@
         <div class="row gx-0">
             <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Tues : 6.00 am - 10.00 pm, Sunday Closed </small>
+                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: @foreach ($opens as $open)
+                        {{ $open->day }} : {{ $open->time }}
+                    @endforeach
+                    </small>
                 </div>
             </div>
-            <div class="col-md-6 text-center text-lg-end">
+            <div class="topbar col-md-6 text-center text-lg-end">
                 <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
                     <div class="me-3 pe-3 border-end py-2">
-                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>info@example.com</p>
+                        <a href="mailto:{{ $contactUs->email }}" class="m-0"><i class="fa fa-envelope-open me-2"></i>{{ $contactUs->email }}</a>
                     </div>
                     <div class="py-2">
-                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</p>
+                        <a href="tel:{{str_replace(" ","", $contactUs->phone)}}" class="m-0"><i class="fa fa-phone-alt me-2"></i>{{ $contactUs->phone }}</a>
                     </div>
                 </div>
             </div>
