@@ -20,5 +20,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['prefix' => '{locale?}', 'middleware'=>'locale'], function (){
     Route::get('/', [HomeController::class, 'index'])->name('homepage');
-
+    Route::get('/aboutUs', [HomeController::class, 'aboutUs'])->name('aboutUs');
+    Route::get('/service', [HomeController::class, 'service'])->name('service');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+    
 });

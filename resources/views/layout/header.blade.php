@@ -82,9 +82,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
+                <a href="{{ localeRoute('homepage') }}" class="nav-item nav-link {{ Request::is('*') && !Request::segment(2) ? 'active' : '' }}">Home</a>
+                <a href="{{ localeRoute('aboutUs') }}" class="nav-item nav-link {{ Request::is('*/aboutUs') ? 'active' : '' }}">About</a>
+                <a href="{{ localeRoute('service') }}" class="nav-item nav-link {{ Request::is('*/service') ? 'active' : '' }}">Service</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
@@ -94,7 +94,7 @@
                         <a href="appointment.html" class="dropdown-item">Appointment</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="{{ localeRoute('contact') }}" class="nav-item nav-link {{ Request::is('*/contact') ? 'active' : '' }}">Contact</a>
             </div>
             <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             <a href="appointment.html" class="btn btn-primary py-2 px-4 ms-3">Appointment</a>
